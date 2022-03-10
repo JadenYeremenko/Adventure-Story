@@ -1,0 +1,113 @@
+var Ron = 0;
+var Hermione = 0;
+var Harry = 0;
+setScreen("WelcomeScreen");
+//Partner 2
+function HarryScore() {
+  Harry = Harry + 2;
+  Ron = Ron - 1;
+  Hermione = Hermione - 1;
+}
+function RonScore() {
+  Ron = Ron + 2;
+  Harry = Harry - 1;
+  Hermione = Hermione - 1;
+}
+//Partner 1
+function HermioneScore() {
+  Hermione = Hermione + 2;
+  Ron = Ron - 1;
+  Harry = Harry - 1;
+}
+onEvent("smartButton", "click", function( ) {
+  HermioneScore();
+  setScreen("question2");
+});
+//Partner 1 did Hermione ones
+//Partner 2 did Harry and Ron ones
+onEvent("kindButton", "click", function( ) {
+  HarryScore();
+  setScreen("question2");
+});
+onEvent("funnyButton", "click", function( ) {
+  RonScore();
+  setScreen("question2");
+});
+onEvent("startButton", "click", function( ) {
+  setScreen("question1");
+});
+onEvent("owlButton", "click", function( ) {
+  HermioneScore();
+  setScreen("question3");
+});
+onEvent("lizardButton", "click", function( ) {
+  RonScore();
+  setScreen("question3");
+});
+onEvent("snakeButton", "click", function( ) {
+  HarryScore();
+  setScreen("question3");
+});
+onEvent("bookButton", "click", function( ) {
+  HermioneScore();
+  setScreen("question4");
+});
+onEvent("gamesButton", "click", function( ) {
+  RonScore();
+  setScreen("question4");
+});
+onEvent("walkButton", "click", function( ) {
+  HermioneScore();
+  setScreen("question4");
+});
+onEvent("blueButton", "click", function( ) {
+  HermioneScore();
+  endCheck();
+});
+onEvent("redButton", "click", function( ) {
+  HarryScore();
+  endCheck();
+});
+onEvent("yellowButton", "click", function( ) {
+  RonScore();
+  endCheck();
+});
+//Partner 1
+function endCheck() {
+  if (Harry >= 3) {
+    setScreen("HarryScreen");
+  }
+  if (Ron >= 3) {
+    setScreen("RonScreen");
+  }
+  if (Hermione >= 3) {
+    setScreen("HermioneScreen");
+  }
+  if (!(Harry >= 3 || (Ron >= 3 || Hermione >= 3))) {
+    setScreen("VoldemortScreen");
+  }
+}
+onEvent("startoverButton", "click", function( ) {
+  Ron = 0;
+  Harry = 0;
+  Hermione = 0;
+  setScreen("WelcomeScreen");
+});
+onEvent("startoverButton2", "click", function( ) {
+  Ron = 0;
+  Harry = 0;
+  Hermione = 0;
+  setScreen("WelcomeScreen");
+});
+onEvent("startoverButton3", "click", function( ) {
+  Ron = 0;
+  Harry = 0;
+  Hermione = 0;
+  setScreen("WelcomeScreen");
+});
+onEvent("startoverButton4", "click", function( ) {
+  Ron = 0;
+  Harry = 0;
+  Hermione = 0;
+  setScreen("WelcomeScreen");
+});
